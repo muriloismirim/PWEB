@@ -1,0 +1,55 @@
+body{
+    font-family: "Segoe UI", Tahoma;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 15px auto;
+    gap: 16px;
+}
+
+.card {
+    flex-basis: calc(100% / 3 - 20px);
+    background-color: hsl(0, 0%, 100%);
+    color: rgb(21, 24, 27);
+    text-align: left;
+    padding: 20px;
+    border-radius: 5px;
+    height: 150px;
+}
+
+.card h2 {
+    margin-top: 0;
+}
+
+.card p {
+    margin-top: 10px 0;
+}
+
+button {
+    border-radius: 5px;
+    box-shadow: 1px 1px 23px 2px #FFFFFF;
+}
+
+.boxfixed {
+    background-color: red;
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    top: 30px;
+    left: 15px;
+    text-align: center;
+    color: aliceblue;
+    }
+.card-news__image {
+    position: relative;
+    flex-shrink: 0;
+    overflow: hidden;
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+    border-radius: 8px;
+}
