@@ -1,0 +1,33 @@
+body{
+    font-family: "Segoe UI", 'Segoe UI', Tahoma;
+    margin: 100;
+    padding: 0;
+}
+
+
+
+header {
+    background-color: black;
+    color: #1926df;
+    padding: 10px 20px;
+    
+}
+
+button{
+    border-radius: 5px;
+}
+
+#principal{
+    height: 1000px;
+    text-align: center;
+    
+}
+
+
+footer {
+    background-color: black;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align:center;
+    
+}

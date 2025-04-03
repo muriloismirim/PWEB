@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando um jogo</title>
+    <link rel="stylesheet" href="Atividade7.css"> 
+</head>
+<body>
+    <header>
+    <h1> JokenPo </h1>
+    </header>
+
+    <div class="container">
+        <div class="card" id="principal">
+
+
+    <p>Faça a sua escolha:</p>
+
+    <button onclick="jogo(1)"><figure>
+        <img src="pedra.jpg" title="pedra" alt="pedra">
+    </figure></button>
+    <button onclick="jogo(2)"><figure>
+        <img src="papel.jpg" title="papel" alt="papel">
+    </figure></button>
+    <button onclick="jogo(3)"><figure>
+        <img src="tesoura.jpg" title="tesoura" alt="tesoura">
+    </figure></button>
+
+
+    <script>
+
+        function jogo(jogador){
+        var aleatorio = Math.floor(Math.random()*3) + 1;
+        
+        if(jogador == 1){
+            alert ('Você escolheu: Pedra'); 
+        }
+        else
+        if(jogador == 2){
+            alert('Você escolheu: Papel');
+        }
+        else
+            alert('Você escolheu Tesoura');
+        
+            if(aleatorio == 1){
+            alert ('PC escolheu: Pedra'); 
+        }
+        else
+        if(aleatorio == 2){
+            alert('PC escolheu: Papel');
+        }
+        else
+            alert('PC escolheu Tesoura');
+        
+        
+        if(jogador == aleatorio){
+            alert('Empate');
+        }
+        else
+        if( jogador == 1 && aleatorio == 2){
+            alert("Computador Venceu");
+        }
+        else 
+        if(jogador == 1 && aleatorio == 3 ){
+            alert('Jogador Venceu');
+        }
+        else
+        if(jogador == 2 && aleatorio == 1){
+            alert('Jogador Venceu');
+        }
+        else
+        if(jogador == 2 && aleatorio == 3){
+            alert('Computador Venceu');
+        }
+        else
+        if(jogador == 3 && aleatorio == 1){
+            alert('Computador Venceu');
+        }
+        else
+        alert('jogador venceu');
+    }
+    </script>
+
+</figure>
+
+
+    
+    </div>
+
+</body>
+</html>
