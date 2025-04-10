@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pesquisa de Filme</title>
+</head>
+
+<body>
+  <h1>Pesquisa de Opinião - Filme</h1>
+  <button onclick="iniciarPesquisa()">Iniciar Pesquisa</button>
+  <pre id="resultado"></pre>
+
+  <script>
+    function iniciarPesquisa() {
+      const totalPessoas = 3;
+      let idades = [];
+      let pessimo = 0;
+      let otimoOuBom = 0;
+
+      let sexoContagem = {
+        masculino: 0,
+        feminino: 0,
+        outros: 0
+      };
+
+      for (let i = 0; i < totalPessoas; i++) {
+        let idade = parseInt(prompt(`Pessoa ${i + 1}: Informe sua idade:`));
+        while (isNaN(idade) || idade <= 0) {
+          idade = parseInt(prompt(`Idade inválida. Pessoa ${i + 1}: Informe sua idade corretamente:`));
+        }
+
+        let sexo = prompt(`Pessoa ${i + 1}: Informe seu sexo (masculino, feminino ou outros):`).toLowerCase();
+        while (!['masculino', 'feminino', 'outros'].includes(sexo)) {
+          sexo = prompt(`Sexo inválido. Informe 'masculino', 'feminino' ou 'outros':`).toLowerCase();
+        }
+
+        let opiniao = parseInt(prompt(`Pessoa ${i + 1}: Qual sua opinião? (4=ótimo, 3=bom, 2=regular, 1=péssimo):`));
+        while (![1, 2, 3, 4].includes(opiniao)) {
+          opiniao = parseInt(prompt(`Opinião inválida. Informe 1=péssimo, 2=regular, 3=bom, 4=ótimo:`));
+        }
+
+        idades.push(idade);
+
+        if (opiniao === 1) pessimo++;
+        if (opiniao === 3 || opiniao === 4) otimoOuBom++;
+
+        sexoContagem[sexo]++;
+      }
+
+      const somaIdades = idades.reduce((acc, val) => acc + val, 0);
+      const mediaIdade = (somaIdades / totalPessoas).toFixed(1);
+      const maisVelho = Math.max(...idades);
+      const maisNovo = Math.min(...idades);
+      const porcentagemOtimoBom = ((otimoOuBom / totalPessoas) * 100).toFixed(2);
+
+      const resultado = `
+RESULTADO DA PESQUISA:
+- Média de idade: ${mediaIdade} anos
+- Pessoa mais velha: ${maisVelho} anos
+- Pessoa mais nova: ${maisNovo} anos
+- Quantidade que respondeu "péssimo": ${pessimo}
+- Porcentagem que respondeu "ótimo" ou "bom": ${porcentagemOtimoBom}%
+- Número de mulheres: ${sexoContagem.feminino}
+- Número de homens: ${sexoContagem.masculino}
+- Número de outros: ${sexoContagem.outros}
+      `;
+
+      document.getElementById('resultado').innerText = resultado;
+    }
+  </script>
+</body>
+</html>
