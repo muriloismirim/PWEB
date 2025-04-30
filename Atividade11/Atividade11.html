@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Atividade 11 - PWEB</title>
+</head>
+<body>
+  <h2>Atividade 11 - PWEB</h2>
+
+  <script>
+    // 1ª forma - Objeto literal
+    const funcionario1 = {
+      matricula: "001",
+      nome: "Carlos Silva",
+      funcao: "Analista de Sistemas"
+    };
+
+    alert("1ª Forma (Objeto Literal):\n" +
+          "Matrícula: " + funcionario1.matricula + "\n" +
+          "Nome: " + funcionario1.nome + "\n" +
+          "Função: " + funcionario1.funcao);
+
+    // 2ª forma - Usando new Object()
+    const funcionario2 = new Object();
+    funcionario2.matricula = "002";
+    funcionario2.nome = "Ana Souza";
+    funcionario2.funcao = "Gerente de Projetos";
+
+    alert("2ª Forma (new Object):\n" +
+          "Matrícula: " + funcionario2.matricula + "\n" +
+          "Nome: " + funcionario2.nome + "\n" +
+          "Função: " + funcionario2.funcao);
+
+    // 3ª forma - Função construtora
+    function Funcionario(matricula, nome, funcao) {
+      this.matricula = matricula;
+      this.nome = nome;
+      this.funcao = funcao;
+    }
+
+    const funcionario3 = new Funcionario("003", "Marcos Lima", "Técnico de Suporte");
+
+    alert("3ª Forma (Função Construtora):\n" +
+          "Matrícula: " + funcionario3.matricula + "\n" +
+          "Nome: " + funcionario3.nome + "\n" +
+          "Função: " + funcionario3.funcao);
+  </script>
+</body>
+</html>
