@@ -1,0 +1,22 @@
+body {
+    background-color: #00cfff;
+    font-family: Arial, sans-serif;
+}
+  
+form {
+    width: 400px;
+    margin: 0 auto;
+    background-color: #00cfff;
+    padding: 20px;
+    text-align: center;
+}
+  
+input, textarea {
+    width: 90%;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+  
+h2 {
+    color: white;
+}
