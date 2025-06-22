@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Detalhes do Filme - CineList</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>CineList - Detalhes do Filme</h1>
+  </header>
+
+  <main id="detalhes-filme" class="detalhes"></main>
+
+  <div style="padding: 2rem;">
+    <a href="index.html" class="btn secundario">← Voltar para Lista</a>
+  </div>
+
+  <script>
+    const filmes = JSON.parse(localStorage.getItem("cineList")) || [];
+    const idSelecionado = Number(localStorage.getItem("filmeSelecionadoId"));
+
+    const filme = filmes.find(f => f.id === idSelecionado);
+    const container = document.getElementById("detalhes-filme");
+
+    if (filme) {
+      container.innerHTML = `
+        <div style="display:flex;gap:2rem;align-items:flex-start;padding:2rem;">
+          <img src="${filme.poster ? 'https://image.tmdb.org/t/p/w300' + filme.poster : 'https://via.placeholder.com/200x300?text=Sem+Imagem'}" alt="${filme.titulo}" class="poster">
+          <div>
+            <h2>${filme.titulo}</h2>
+            <p><strong>Diretor:</strong> ${filme.diretor}</p>
+            <p><strong>Ano:</strong> ${filme.ano}</p>
+            <p><strong>Gênero:</strong> ${filme.genero}</p>
+            <p><strong>Duração:</strong> ${filme.duracao} minutos</p>
+            <p><strong>Classificação:</strong> ${filme.classificacao}</p>
+            <p><strong>Elenco:</strong> ${filme.elenco}</p>
+            <p><strong>Nota:</strong> ${filme.nota}/5</p>
+            <p><strong>Data de Adição:</strong> ${filme.dataAdicao}</p>
+            <h3>Sinopse</h3>
+            <p>${filme.sinopse}</p>
+          </div>
+        </div>
+      `;
+    } else {
+      container.innerHTML = "<p>Filme não encontrado.</p>";
+    }
+  </script>
+</body>
+</html>
